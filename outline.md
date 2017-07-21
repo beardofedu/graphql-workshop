@@ -1,6 +1,6 @@
 I. Intro to APIs
 
-## Lesson 0: why even API?
+## Why even API?
 What is an API?
 - An API is an Application Programming Interface.
 - Cool story, what does that *mean*?
@@ -31,16 +31,70 @@ Why use the GitHub API?
         - Send reminders to people with Pull Requests open for over 30 days
 
 II. Quick GraphQL Example
-  1. GraphQL Terminology
-
+      1. have 5 pull requests in 5 different repositories that people can comment on if they are just creating a GitHub account for this course
 III. Build a Query
   1. What is a Query?
 
-IV. Grap Query Response
-  1.
+    query {
+      viewer {
+      contributedRepositories(last:5, privacy:PUBLIC) {
+        edges {
+          node {
+            owner {
+              login
+            }
+            name
+            url
+          }
+        }
+      }
+      }
+    }
+
+    2. Defining our query
+    viewer: Who is currently the logged in user? (you!)
+    contributedRepositories(last:#, privacy:PUBLIC): Contributed repositories is what is known as a connection. It a relationship between two sets of data. In this case, it is a connection between the user (in this case the logged in user) and the (most recent) repositories the viewer has contributed to. We are providing two arguments to help us limit the results.
+    Last: tells the query to return the most recent results. In this case, the # must be used to limit the number of repositories returned.
+    We also chose to only display PUBLIC repositories by providing the privacy argument. We could also set this parameter to PRIVATE, or leave it out altogether if we’d like PUBLIC and PRIVATE repositories.
+    edge: It is easiest to think of an edge as a bridge between two sets of data. You will need an edge any time you are working between nodes.
+    node: A node is a set of data. If an edge is a bridge connecting two islands, the node is the island. Within a node, you can select specific data you would like to view. In this case, the node contains the information about the repositories.
+
+    For a visual example of nodes and edges, view the GraphQL Voyager site(https://apis.guru/graphql-voyager/). Any column of data in the graphs would be considered a node, and the lines connecting them would be considered edges.
+    owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
+    login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
+    name: The name of the repository.
+    url: The repository’s URL.
+
+
+
+IV. GraphQL Query Response
+  1. Before clicking Query, where is our data going to be returned? Why?
+  1. Examining what is returned
+  1. What can we do with this data?
 
 V. Use Query to Find Specific Information
-  1.
+  1. Create an issue in a repo on your account
+      Run this with your specific username and repository id
 
+        query FindIssueID {
+          repository(owner: "", name: "") {
+
+          }
+        }
 VI. Create Mutation
   1. What is a Mutation?
+     Allows us to manipulate server side data, in this instance, it is going to create a list of the repositories we recently contributed to.
+
+     mutation AddComment {
+       addComment(input: {
+         subjectId: "[issueID]",
+         body: "[contribution template]"})
+       {
+         subject {
+           id
+         }
+       }
+     }
+
+     Examine the mutation
+     Run and watch a comment be added to the issue
