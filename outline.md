@@ -64,10 +64,10 @@ III. Build a Query
 
 For a visual example of nodes and edges, view the GraphQL Voyager site(https://apis.guru/graphql-voyager/). Any column of data in the graphs would be considered a node, and the lines connecting them would be considered edges.
     
-    - owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
-    - login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
-    - name: The name of the repository.
-    - url: The repository’s URL.
+   - owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
+   - login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
+   - name: The name of the repository.
+   - url: The repository’s URL.
 
 
 
