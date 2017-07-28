@@ -32,7 +32,10 @@ Why use the GitHub API?
        - Send reminders to people with Pull Requests open for over 30 days
 
 II. Quick GraphQL Example
-      1. have 5 pull requests in 5 different repositories that people can comment on if they are just creating a GitHub account for this course
+      
+   1. have 5 pull requests in 5 different repositories that people can comment on if they are just creating a GitHub account for this course
+
+
 III. Build a Query
   1. What is a Query?
 
