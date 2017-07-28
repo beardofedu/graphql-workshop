@@ -35,21 +35,23 @@ II. Quick GraphQL Example
 III. Build a Query
   1. What is a Query?
 
-    query {
-      viewer {
-      contributedRepositories(last:5, privacy:PUBLIC) {
-        edges {
-          node {
-            owner {
-              login
+        ```
+        query {
+          viewer {
+          contributedRepositories(last:5, privacy:PUBLIC) {
+            edges {
+              node {
+                owner {
+                  login
+                }
+                name
+                url
+              }
             }
-            name
-            url
+          }
           }
         }
-      }
-      }
-    }
+        ```
 
     2. Defining our query
     viewer: Who is currently the logged in user? (you!)
@@ -76,25 +78,30 @@ V. Use Query to Find Specific Information
   1. Create an issue in a repo on your account
       Run this with your specific username and repository id
 
+        ```
         query FindIssueID {
           repository(owner: "", name: "") {
 
           }
         }
+        ```
+        
 VI. Create Mutation
   1. What is a Mutation?
      Allows us to manipulate server side data, in this instance, it is going to create a list of the repositories we recently contributed to.
-
-     mutation AddComment {
-       addComment(input: {
-         subjectId: "[issueID]",
-         body: "[contribution template]"})
-       {
-         subject {
-           id
+        
+        ```
+         mutation AddComment {
+           addComment(input: {
+             subjectId: "[issueID]",
+             body: "[contribution template]"})
+           {
+             subject {
+               id
+             }
+           }
          }
-       }
-     }
+       ```
 
      Examine the mutation
      Run and watch a comment be added to the issue
