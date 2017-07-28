@@ -63,6 +63,7 @@ III. Build a Query
     - node: A node is a set of data. If an edge is a bridge connecting two islands, the node is the island. Within a node, you can select specific data you would like to view. In this case, the node contains the information about the repositories.
 
 For a visual example of nodes and edges, view the GraphQL Voyager site(https://apis.guru/graphql-voyager/). Any column of data in the graphs would be considered a node, and the lines connecting them would be considered edges.
+    
     - owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
     - login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
     - name: The name of the repository.
