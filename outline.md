@@ -54,18 +54,19 @@ III. Build a Query
         ```
 
     2. Defining our query
-    viewer: Who is currently the logged in user? (you!)
-    contributedRepositories(last:#, privacy:PUBLIC): Contributed repositories is what is known as a connection. It a relationship between two sets of data. In this case, it is a connection between the user (in this case the logged in user) and the (most recent) repositories the viewer has contributed to. We are providing two arguments to help us limit the results.
-    Last: tells the query to return the most recent results. In this case, the # must be used to limit the number of repositories returned.
-    We also chose to only display PUBLIC repositories by providing the privacy argument. We could also set this parameter to PRIVATE, or leave it out altogether if we’d like PUBLIC and PRIVATE repositories.
-    edge: It is easiest to think of an edge as a bridge between two sets of data. You will need an edge any time you are working between nodes.
-    node: A node is a set of data. If an edge is a bridge connecting two islands, the node is the island. Within a node, you can select specific data you would like to view. In this case, the node contains the information about the repositories.
+    
+    - viewer: Who is currently the logged in user? (you!)
+    - contributedRepositories(last:#, privacy:PUBLIC): Contributed repositories is what is known as a connection. It a relationship between two sets of data. In this case, it is a connection between the user (in this case the logged in user) and the (most recent) repositories the viewer has contributed to. We are providing two arguments to help us limit the results.
+    - Last: tells the query to return the most recent results. In this case, the # must be used to limit the number of repositories returned.
+    - We also chose to only display PUBLIC repositories by providing the privacy argument. We could also set this parameter to PRIVATE, or leave it out altogether if we’d like PUBLIC and PRIVATE repositories.
+    - edge: It is easiest to think of an edge as a bridge between two sets of data. You will need an edge any time you are working between nodes.
+    - node: A node is a set of data. If an edge is a bridge connecting two islands, the node is the island. Within a node, you can select specific data you would like to view. In this case, the node contains the information about the repositories.
 
 For a visual example of nodes and edges, view the GraphQL Voyager site(https://apis.guru/graphql-voyager/). Any column of data in the graphs would be considered a node, and the lines connecting them would be considered edges.
-    owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
-    login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
-    name: The name of the repository.
-    url: The repository’s URL.
+    - owner: Within the node, you will find specific pieces of information called interfaces. These are interfaces have additional layers of data.
+    - login: The repository owner’s username on GitHub. The owner may be an individual, or an organization.
+    - name: The name of the repository.
+    - url: The repository’s URL.
 
 
 
