@@ -23,12 +23,13 @@ Why even API?
       - That store's sales numbers are stored and tracked with APIs
 
 Why use the GitHub API?
-    - Avoid doing those repetitive tasks manually, and save time!
-    - Examples of what the GitHub API can be used for:
-        - Adding new hires to predetermined teams
-        - Check for stale Issues over 100 days old
-        - Check for repositories containing the word `password` to see if anyone is putting passwords in plain text
-        - Send reminders to people with Pull Requests open for over 30 days
+
+   - Avoid doing those repetitive tasks manually, and save time!
+   - Examples of what the GitHub API can be used for:
+       - Adding new hires to predetermined teams
+       - Check for stale Issues over 100 days old
+       - Check for repositories containing the word `password` to see if anyone is putting passwords in plain text
+       - Send reminders to people with Pull Requests open for over 30 days
 
 II. Quick GraphQL Example
       1. have 5 pull requests in 5 different repositories that people can comment on if they are just creating a GitHub account for this course
